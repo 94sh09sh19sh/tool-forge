@@ -33,10 +33,10 @@ description: 使用者描述痛點並要建議解法，或要做新工具／hook
 - 對所有切題方案（≥1000 與 <1000 星都要）列：優點 → 採用／不採用 → 理由。
 - 熱門未解 issue 是別人沒補的缺口，設計時要補上或寫明不處理的理由。
 - 最終設計＝獨立解法＋採用的優點；兩者衝突時寫出取捨。
-- 只吸收想法、自己重寫。要搬程式碼只限寬鬆授權（scout 標示為 ok），保留原著作權聲明並在 README 註明；copyleft 與無授權的只參考想法。
+- 只吸收想法、自己重寫。自建的 repo 一律 MIT，所以要搬程式碼只限與 MIT 相容的寬鬆授權（scout 標示為 ok），保留原著作權聲明並在 README 註明；copyleft 與無授權的只參考想法。
 
 ## 6. 建 repo、發布
-- `node ~/.claude/toolkeeper/cli.js new <名稱> [--skill]`，之後照工具 repo 資料夾 `CLAUDE.md` 的維護規則（省 token、hook 沒事不輸出、description 只寫觸發情境）。
+- `node ~/.claude/toolkeeper/cli.js new <名稱> [--skill]`（會自動加 MIT 的 LICENSE；擴充舊工具時若缺授權，用 `license <名稱>` 補），之後照工具 repo 資料夾 `CLAUDE.md` 的維護規則（省 token、hook 沒事不輸出、description 只寫觸發情境）。
 - 有程式就附 `test.js`，在 `deploy.json` 設 `"test": "node test.js"` 並把 `test.js` 放進 `exclude`。
 - README 加「## 現成方案比較」：候選、星數、授權、缺了哪條 R、吸收了什麼。
 - `deploy <名稱>` 實際試用 → `check <名稱>` → commit → `gh repo create <名稱> --public --source . --push`。
