@@ -1,0 +1,5 @@
+{
+  "target": "skills/tool-forge",
+  "exclude": ["test.js"],
+  "test": "node test.js"
+}
