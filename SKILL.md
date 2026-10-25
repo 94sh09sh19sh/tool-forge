@@ -5,12 +5,13 @@ description: 使用者描述痛點並要建議解法，或要做新工具／hook
 
 # tool-forge：痛點 → 獨立解法 → 找現成 → 自建發布
 
-順序不能換：先自己想，再查現成，最後才寫。使用者已授權整套流程，中途不用再確認，除了「要不要安裝第三方方案」。
+順序不能換：先自己想，再查現成，最後才寫。使用者已授權整套流程，中途不用再確認，除了「要不要安裝第三方方案」與「新 repo 要公開或私人」。
 
 ## 1. 釘死痛點
 - 寫成一句話：誰、在什麼情況、卡在哪。
 - 列必要需求 R1…Rn（每條都能用「做得到／做不到」驗證）與加分需求 N1…。
 - 只有在不同解讀會做出不同工具時才問，最多一輪；其餘自己判斷並寫在回報裡。
+- 同一輪用 AskUserQuestion 問新 repo 要「公開」還是「私人」（推薦公開，toolkeeper 的公開檢查才有意義）；擴充舊工具不用問。
 
 ## 2. 獨立解法（搜尋前完成）
 - 還沒查任何現成方案前，先寫出自己的解法：形態（hook／skill／CLI／狀態列／組合）、核心做法、每條 R 怎麼滿足、風險。
@@ -39,7 +40,7 @@ description: 使用者描述痛點並要建議解法，或要做新工具／hook
 - `node ~/.claude/toolkeeper/cli.js new <名稱> [--skill]`（會自動加 MIT 的 LICENSE；擴充舊工具時若缺授權，用 `license <名稱>` 補），之後照工具 repo 資料夾 `CLAUDE.md` 的維護規則（省 token、hook 沒事不輸出、description 只寫觸發情境）。
 - 有程式就附 `test.js`，在 `deploy.json` 設 `"test": "node test.js"` 並把 `test.js` 放進 `exclude`。
 - README 加「## 現成方案比較」：候選、星數、授權、缺了哪條 R、吸收了什麼。
-- `deploy <名稱>` 實際試用 → `check <名稱>` → commit → `gh repo create <名稱> --public --source . --push`。
+- `deploy <名稱>` 實際試用 → `check <名稱>` → commit → `gh repo create <名稱> --<public|private> --source . --push`（照第 1 步的答案）。
 - `check` 擋下就移除個人內容，不要用 `toolkeeper: allow` 帶過，除非那行確定可公開。
 
 ## 7. 回報（條列、短）

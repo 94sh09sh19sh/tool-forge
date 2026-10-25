@@ -8,7 +8,7 @@ Claude Code skill：把「說出痛點 → 做出新工具」變成固定流程�
 3. 偵查：先看自己既有的工具能不能擴充；再用 `scout.js` 多組關鍵字搜 GitHub、查 awesome 清單；切題的候選用 `--vet` 看授權檔與熱門未解 issue，逐條核對 R。
 4. 判斷：≥1000 星＋授權可用＋未封存＋R 全部有證據滿足＋能在本機環境跑，才採用；否則自建。
 5. 吸收優點：≥1000 與 <1000 星的方案都列優點與取捨；熱門未解 issue 當作要補的缺口；程式碼只從寬鬆授權搬，並保留聲明。
-6. 用 toolkeeper `new` 建 repo → 測試 → `deploy` 試用 → `check` → commit → `gh repo create --public --push`。
+6. 用 toolkeeper `new` 建 repo → 測試 → `deploy` 試用 → `check` → commit → `gh repo create --<public|private> --push`（可見性在第 1 步問使用者）。
 7. 條列回報。
 
 ## scout.js
